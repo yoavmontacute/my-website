@@ -1,0 +1,139 @@
+/* ===== Palette ===== */
+:root{
+  --cambridge-blue: #A3C1AD;      /* main side bands */
+  --cambridge-700:  #6E8F7C;      /* links, rules */
+  --cambridge-800:  #546F60;      /* hover */
+  --ink:            #111;         /* text */
+  --muted:          #555;         /* secondary text */
+  --paper:          #fff;         /* background */
+  --rule:           #dfe6e2;      /* hr lines */
+  --sideband-w:     14px;         /* side band width */
+  --maxw:           980px;        /* content width */
+  --rhythm:         1rem;         /* spacing unit */
+  --font:           system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== Side colour bands ===== */
+.sideband {
+  position: fixed;
+  top: 0; bottom: 0;
+  width: var(--sideband-w);
+  background: var(--cambridge-blue);
+  z-index: 0;
+}
+.sideband--left  { left: 0; }
+.sideband--right { right: 0; }
+
+/* ===== Layout ===== */
+.site-header, .site-footer { position: relative; z-index: 1; }
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: calc(var(--rhythm) * 2) calc(var(--rhythm) * 1.25);
+}
+.site-header {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: calc(var(--rhythm) * 1.5) calc(var(--rhythm) * 1.25) 0;
+}
+
+/* ===== Typography ===== */
+.site-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin: 0 0 .25rem 0;
+  line-height: 1.2;
+}
+.site-title .jp { font-weight: 500; color: var(--muted); font-size: 0.9em; }
+
+h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  margin-top: 2rem;
+  padding-bottom: .2rem;
+  border-bottom: 2px solid var(--cambridge-700);
+}
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1.2rem;
+}
+
+p { margin: 0 0 0.9rem 0; }
+ul { margin: .5rem 0 1.25rem 1.1rem; }
+
+/* Accent label style (used in table headings) */
+.accent { color: var(--ink); background: none; }
+.accent--alert { color: #c62323; }
+
+/* Links */
+a { color: var(--cambridge-700); text-decoration: none; }
+a:hover, a:focus { color: var(--cambridge-800); text-decoration: underline; }
+
+/* Figure (profile image floated right like your original) */
+.figure {
+  float: right;
+  margin: 0 0 1rem 1rem;
+  border: 2px solid var(--cambridge-700);
+  padding: 2px;
+}
+.figure img { display: block; }
+
+/* Three columns at the bottom (Contact / Databases / Profiles) */
+.three-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.three-cols h3 { margin-top: 0; }
+
+/* Small flag image */
+.flag img {
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+
+/* Footer */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem calc(var(--rhythm) * 1.25) 2.5rem;
+}
+.copy {
+  color: var(--muted);
+  font-size: .9rem;
+  border-top: 1px solid var(--rule);
+  padding-top: .75rem;
+}
+
+/* Horizontal rule */
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+  margin: 1.5rem 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  .three-cols { grid-template-columns: 1fr; }
+  .figure { float: none; margin: 0 auto 1rem auto; display: inline-block; }
+}
+
+/* Ensure sidebands don’t cover content on very small screens */
+@media (max-width: 520px) {
+  .sideband { width: 8px; }
+}
