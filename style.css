@@ -1,139 +1,129 @@
-/* ===== Palette ===== */
-:root{
-  --cambridge-blue: #A3C1AD;      /* main side bands */
-  --cambridge-700:  #6E8F7C;      /* links, rules */
-  --cambridge-800:  #546F60;      /* hover */
-  --ink:            #111;         /* text */
-  --muted:          #555;         /* secondary text */
-  --paper:          #fff;         /* background */
-  --rule:           #dfe6e2;      /* hr lines */
-  --sideband-w:     14px;         /* side band width */
-  --maxw:           980px;        /* content width */
-  --rhythm:         1rem;         /* spacing unit */
-  --font:           system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+:root {
+  --cambridge-blue: #A3C1AD;
+  --cambridge-700:  #6E8F7C;
+  --cambridge-800:  #546F60;
+  --ink:            #111;
+  --muted:          #555;
+  --paper:          #fff;
+  --rule:           #dfe6e2;
+  --sideband-w:     12vw;          /* bolder colour sides */
+  --maxw:           960px;
+  --rhythm:         1rem;
+  --font: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
 }
 
-/* ===== Base ===== */
+/* ---------- Reset & base ---------- */
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html,body { margin:0;padding:0; }
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  line-height:1.6;
 }
+img { max-width:100%; height:auto; }
 
-/* ===== Side colour bands ===== */
+/* ---------- Side bands ---------- */
 .sideband {
-  position: fixed;
-  top: 0; bottom: 0;
-  width: var(--sideband-w);
-  background: var(--cambridge-blue);
-  z-index: 0;
+  position:fixed;
+  top:0;bottom:0;
+  width:var(--sideband-w);
+  background:var(--cambridge-blue);
+  z-index:0;
 }
-.sideband--left  { left: 0; }
-.sideband--right { right: 0; }
+.sideband--left{ left:0; }
+.sideband--right{ right:0; }
 
-/* ===== Layout ===== */
-.site-header, .site-footer { position: relative; z-index: 1; }
-.page {
-  position: relative;
-  z-index: 1;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: calc(var(--rhythm) * 2) calc(var(--rhythm) * 1.25);
+/* ---------- Layout ---------- */
+.site-header,.site-footer{ position:relative;z-index:1;}
+.page{
+  position:relative;
+  z-index:1;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:calc(var(--rhythm)*2) calc(var(--rhythm)*1.25);
 }
-.site-header {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: calc(var(--rhythm) * 1.5) calc(var(--rhythm) * 1.25) 0;
-}
-
-/* ===== Typography ===== */
-.site-title {
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  margin: 0 0 .25rem 0;
-  line-height: 1.2;
-}
-.site-title .jp { font-weight: 500; color: var(--muted); font-size: 0.9em; }
-
-h2 {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  margin-top: 2rem;
-  padding-bottom: .2rem;
-  border-bottom: 2px solid var(--cambridge-700);
-}
-h3 {
-  font-size: 1.05rem;
-  margin-top: 1.2rem;
+.site-header{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:2rem 1.25rem 0;
 }
 
-p { margin: 0 0 0.9rem 0; }
-ul { margin: .5rem 0 1.25rem 1.1rem; }
-
-/* Accent label style (used in table headings) */
-.accent { color: var(--ink); background: none; }
-.accent--alert { color: #c62323; }
-
-/* Links */
-a { color: var(--cambridge-700); text-decoration: none; }
-a:hover, a:focus { color: var(--cambridge-800); text-decoration: underline; }
-
-/* Figure (profile image floated right like your original) */
-.figure {
-  float: right;
-  margin: 0 0 1rem 1rem;
-  border: 2px solid var(--cambridge-700);
-  padding: 2px;
+/* ---------- Typography ---------- */
+.site-title{
+  font-size:clamp(1.7rem,3.5vw,2.2rem);
+  margin:0 0 .25rem 0;
+  line-height:1.2;
 }
-.figure img { display: block; }
+.site-title .jp{font-weight:500;color:var(--muted);font-size:0.9em;}
 
-/* Three columns at the bottom (Contact / Databases / Profiles) */
-.three-cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+h2{
+  font-size:clamp(1.25rem,2.5vw,1.5rem);
+  margin-top:2rem;
+  padding-bottom:.25rem;
+  border-bottom:2px solid var(--cambridge-700);
 }
-.three-cols h3 { margin-top: 0; }
+h3{font-size:1.05rem;margin-top:1.2rem;}
+p{margin:0 0 0.9rem 0;}
+ul{margin:.5rem 0 1.25rem 1.1rem;}
 
-/* Small flag image */
-.flag img {
-  display: inline-block;
-  border: 1px solid #ccc;
-}
+/* ---------- Links ---------- */
+a{color:var(--cambridge-700);text-decoration:none;}
+a:hover,a:focus{color:var(--cambridge-800);text-decoration:underline;}
 
-/* Footer */
-.site-footer {
-  position: relative;
-  z-index: 1;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 1.5rem calc(var(--rhythm) * 1.25) 2.5rem;
+/* ---------- Image blocks ---------- */
+.figure{
+  float:right;
+  margin:0 0 1rem 1rem;
+  border:2px solid var(--cambridge-700);
+  padding:2px;
 }
-.copy {
-  color: var(--muted);
-  font-size: .9rem;
-  border-top: 1px solid var(--rule);
-  padding-top: .75rem;
+.figure img{display:block;width:211px;height:auto;}
+
+.flag img{
+  display:inline-block;
+  border:1px solid #ccc;
+  width:20px;
+  height:auto;
 }
 
-/* Horizontal rule */
-hr {
-  border: 0;
-  height: 1px;
-  background: var(--rule);
-  margin: 1.5rem 0;
+/* ---------- Multi-column footer ---------- */
+.three-cols{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.2rem;
+}
+.three-cols h3{margin-top:0;}
+.accent{color:var(--ink);}
+.accent--alert{color:#c62323;}
+
+/* ---------- Footer ---------- */
+.site-footer{
+  position:relative;
+  z-index:1;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:1.5rem 1.25rem 2.5rem;
+}
+.copy{
+  color:var(--muted);
+  font-size:.9rem;
+  border-top:1px solid var(--rule);
+  padding-top:.75rem;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 860px) {
-  .three-cols { grid-template-columns: 1fr; }
-  .figure { float: none; margin: 0 auto 1rem auto; display: inline-block; }
+/* ---------- HR ---------- */
+hr{
+  border:0;height:1px;background:var(--rule);
+  margin:1.5rem 0;
 }
 
-/* Ensure sidebands don’t cover content on very small screens */
-@media (max-width: 520px) {
-  .sideband { width: 8px; }
+/* ---------- Responsive ---------- */
+@media(max-width:900px){
+  :root{--sideband-w:8vw;}
+  .three-cols{grid-template-columns:1fr;}
+  .figure{float:none;margin:0 auto 1rem auto;display:inline-block;}
+}
+@media(max-width:600px){
+  :root{--sideband-w:6vw;}
 }
