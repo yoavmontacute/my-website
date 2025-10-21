@@ -162,3 +162,7 @@ hr{
   opacity: 0;
   pointer-events: none;
 }
+
+h2, h3, .pubtype, .section, .subtitle {
+  color: #000 !important;
+}
