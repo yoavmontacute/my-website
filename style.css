@@ -11,7 +11,9 @@
   --rhythm:         1rem;
   --font: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
 }
-
+.skip-link {
+  display: none !important;
+}
 /* Base reset */
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
