@@ -163,9 +163,6 @@ hr{
   pointer-events: none;
 }
 
-.three-cols strong,
-.three-cols h3,
-.three-cols .accent,
-.three-cols .accent--alert {
+h2, h3, .pubtype, .section, .subtitle {
   color: #000 !important;
 }
