@@ -163,6 +163,7 @@ hr{
   pointer-events: none;
 }
 
-h2, h3, .pubtype, .section, .subtitle {
+.three-cols h3 .accent,
+.three-cols h3 .accent strong {
   color: #000 !important;
 }
