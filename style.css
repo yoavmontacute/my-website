@@ -154,3 +154,9 @@ hr{
   background: rgba(163,193,173,0.25);
   color: var(--cambridge-800);
 }
+
+.skip-link {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
