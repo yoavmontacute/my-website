@@ -254,3 +254,11 @@ hr{
 @media (max-width:600px){
   :root{ --sideband-w:6vw; }
 }
+
+/* wordbreak  */
+h1, h2, h3,
+.dates-table td,
+.site-title {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
