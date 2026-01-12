@@ -167,3 +167,32 @@ hr{
 .three-cols h3 .accent strong {
   color: #000 !important;
 }
+
+.dates-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  border-bottom: 3px solid #1f5fbf;
+}
+
+.dates-table td {
+  padding: 12px 16px;
+  font-size: 1rem;
+}
+
+.dates-table tr:nth-child(odd) {
+  background-color: #dcecf7;
+}
+
+.dates-table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.dates-table td:first-child {
+  width: 65%;
+}
+
+.dates-table td:last-child {
+  width: 35%;
+  white-space: nowrap;
+}
