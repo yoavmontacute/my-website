@@ -74,6 +74,8 @@ img{
   right:1.25rem;
   width:170px;   /* was 80px */
   height:auto;
+  position: absolute;
+  z-index: 2;
 }
 
 /* ================= Page ================= */
@@ -97,6 +99,8 @@ h2{
   margin-top:2rem;
   padding-bottom:.25rem;
   border-bottom:2px solid var(--cambridge-700);
+  position: relative;
+  z-index: 1;
 }
 
 h3{
