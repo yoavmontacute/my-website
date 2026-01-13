@@ -1,23 +1,23 @@
-
 :root{
   /* Muted Cambridge-style blue palette */
-  --cambridge-blue: #A9BDD6;   /* side bands */
-  --cambridge-700:  #5E7FAE;   /* links / accents */
-  --cambridge-800:  #46638F;   /* hover / emphasis */
+  --cambridge-blue: #A9BDD6;
+  --cambridge-700:  #5E7FAE;
+  --cambridge-800:  #46638F;
 
-  --ink:            #111;
-  --muted:          #555;
-  --paper:          #fff;
-  --rule:           #e1e6ef;
+  --ink:   #111;
+  --muted: #555;
+  --paper: #fff;
+  --rule:  #e1e6ef;
 
-  --sideband-w:     12vw;
-  --maxw:           980px;
+  --sideband-w: 12vw;
+  --maxw: 980px;
 
   --font: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,
            "Apple Color Emoji","Segoe UI Emoji";
 }
 
-/* Base reset */
+/* ================= Base reset ================= */
+
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 
@@ -33,9 +33,11 @@ body{
 img{
   max-width:100%;
   height:auto;
+  display:block;
 }
 
-/* Decorative side bands */
+/* ================= Decorative side bands ================= */
+
 .sideband{
   position:fixed;
   top:0; bottom:0;
@@ -46,9 +48,11 @@ img{
 .sideband--left{ left:0; }
 .sideband--right{ right:0; }
 
-/* Layout */
+/* ================= Layout ================= */
+
 .site-header,
-.site-footer{
+.site-footer,
+.page{
   position:relative;
   z-index:1;
 }
@@ -57,18 +61,31 @@ img{
   max-width:var(--maxw);
   margin:0 auto;
   padding:2rem 1.25rem 0;
-  position: relative; /* anchor for logo */
 }
 
-.page{
+/* Desktop header layout */
+.brand{
   position:relative;
-  z-index:1;
+}
+
+.site-logo{
+  position:absolute;
+  top:2.2rem;
+  right:1.25rem;
+  width:80px;
+  height:auto;
+}
+
+/* ================= Page ================= */
+
+.page{
   max-width:var(--maxw);
   margin:0 auto;
   padding:2rem 1.25rem;
 }
 
-/* Typography */
+/* ================= Typography ================= */
+
 .site-title{
   font-size:clamp(1.7rem,3.5vw,2.2rem);
   margin:0 0 .25rem 0;
@@ -87,15 +104,14 @@ h3{
   margin-top:1.2rem;
 }
 
-p{
-  margin:0 0 .9rem 0;
-}
+p{ margin:0 0 .9rem 0; }
 
 ul{
   margin:.5rem 0 1.25rem 1.1rem;
 }
 
-/* Links */
+/* ================= Links ================= */
+
 a{
   color:var(--cambridge-700);
   text-decoration:none;
@@ -106,7 +122,8 @@ a:focus{
   text-decoration:underline;
 }
 
-/* Tables (Dates etc.) */
+/* ================= Tables ================= */
+
 .dates-table{
   width:100%;
   border-collapse:collapse;
@@ -134,7 +151,8 @@ a:focus{
   white-space:nowrap;
 }
 
-/* Footer */
+/* ================= Footer ================= */
+
 .site-footer{
   max-width:var(--maxw);
   margin:0 auto;
@@ -148,35 +166,39 @@ a:focus{
   padding-top:.75rem;
 }
 
-/* Word-breaking control */
-h1, h2, h3,
+/* ================= Word breaking ================= */
+
+/* Desktop: keep aesthetics */
 .site-title,
-.dates-table td{
+h1,h2,h3{
   word-break: keep-all;
   overflow-wrap: normal;
 }
 
-/* =========================
-   Header logo (objective)
-   ========================= */
+/* ================= MOBILE ================= */
 
-.site-logo{
-  position:absolute;
-  top:2.2rem;        /* slightly below header top */
-  right:1.25rem;     /* aligns with header padding */
-  width:80px;        /* desktop size */
-  height:auto;
-}
+@media (max-width: 600px){
 
-@media (max-width: 600px) {
-  .site-header {
-    --logo-w: 50px;
-    padding-top: calc(1.6rem + var(--logo-w) + 0.5rem);
-    padding-right: calc(1.25rem + var(--logo-w) + 0.5rem);
+  :root{
+    --sideband-w: 6vw;
   }
 
-  .site-logo {
-    width: var(--logo-w);
-    top: 1.6rem;
+  /* Switch header to grid — NO absolute positioning */
+  .brand{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    align-items:start;
+    gap:0.75rem;
+  }
+
+  .site-logo{
+    position:static;
+    width:50px;
+  }
+
+  .site-title{
+    max-width:100%;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 }
