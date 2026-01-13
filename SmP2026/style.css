@@ -52,7 +52,7 @@ img{
 .site-header{
   position:relative;
   z-index:2;                 /* above sidebands */
-  background:white;          /* MASKS the bars */
+  background:transparent;          /* MASKS the bars */
   max-width:var(--maxw);
   margin:0 auto;
   padding:0.5rem 1.25rem 0;
