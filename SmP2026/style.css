@@ -274,8 +274,8 @@ h1, h2, h3,
 
 .site-logo {
   position: absolute;
-  top: 0;
+  top: 1.2rem;
   right: 1.25rem;   /* aligns with header padding */
-  width: 150px;      /* adjust freely */
+  width: 200px;      /* adjust freely */
   height: auto;
 }
