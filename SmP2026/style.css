@@ -156,6 +156,13 @@ a:hover{
 
 /* ===== Mobile ===== */
 
+/* Medium screens: prevent logo/title collision */
+@media (max-width: 1000px){
+  .site-logo{
+    width:120px;
+  }
+}
+
 @media (max-width:600px){
 
   :root{
