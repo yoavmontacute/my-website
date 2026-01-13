@@ -181,3 +181,9 @@ h1, h2, h3,
     top:1.6rem;
   }
 }
+
+@media (max-width: 600px) {
+  .site-header {
+    padding-top: 4.2rem; /* creates room for logo */
+  }
+}
