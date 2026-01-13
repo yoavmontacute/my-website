@@ -276,6 +276,6 @@ h1, h2, h3,
   position: absolute;
   top: 0;
   right: 1.25rem;   /* aligns with header padding */
-  width: 120px;      /* adjust freely */
+  width: 150px;      /* adjust freely */
   height: auto;
 }
