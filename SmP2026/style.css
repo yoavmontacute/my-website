@@ -273,7 +273,9 @@ h1, h2, h3,
 }
 
 .site-logo {
-  margin-left: auto;      /* pushes it to the right */
-  width: 40px;           /* control size */
+  position: absolute;
+  top: 0;
+  right: 1.25rem;   /* aligns with header padding */
+  width: 80px;      /* adjust freely */
   height: auto;
 }
