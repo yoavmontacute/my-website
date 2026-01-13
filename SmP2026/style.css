@@ -168,19 +168,15 @@ h1, h2, h3,
   height:auto;
 }
 
-/* Responsive tweaks */
 @media (max-width: 600px) {
-  :root {
-    --sideband-w: 6vw;
-  }
-
   .site-header {
-    padding-top: 2rem;
-    min-height: 9rem;   /* GUARANTEED clearance */
+    --logo-w: 50px;
+    padding-top: calc(1.6rem + var(--logo-w) + 0.5rem);
+    padding-right: calc(1.25rem + var(--logo-w) + 0.5rem);
   }
 
   .site-logo {
-    width: 50px;
+    width: var(--logo-w);
     top: 1.6rem;
   }
 }
