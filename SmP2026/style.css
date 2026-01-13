@@ -279,3 +279,7 @@ h1, h2, h3,
   width: 200px;      /* adjust freely */
   height: auto;
 }
+
+.site-header {
+  padding-right: 120px;
+}
