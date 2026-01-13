@@ -169,23 +169,14 @@ h1, h2, h3,
 }
 
 /* Responsive tweaks */
-@media (max-width:900px){
-  :root{ --sideband-w:8vw; }
-}
-
-@media (max-width:600px){
-  :root{ --sideband-w:6vw; }
-
-  .site-logo{
-    width:50px;
-    top:1.6rem;
-  }
-}
-
 @media (max-width: 600px) {
+  :root {
+    --sideband-w: 6vw;
+  }
+
   .site-header {
-    padding-top: 2rem;     /* keep aesthetics */
-    min-height: 6.5rem;    /* hard floor: prevents overlap */
+    padding-top: 2rem;
+    min-height: 9rem;   /* GUARANTEED clearance */
   }
 
   .site-logo {
