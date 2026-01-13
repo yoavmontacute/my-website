@@ -184,6 +184,12 @@ h1, h2, h3,
 
 @media (max-width: 600px) {
   .site-header {
-    padding-top: 4.2rem; /* creates room for logo */
+    padding-top: 2rem;     /* keep aesthetics */
+    min-height: 6.5rem;    /* hard floor: prevents overlap */
+  }
+
+  .site-logo {
+    width: 50px;
+    top: 1.6rem;
   }
 }
