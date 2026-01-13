@@ -280,6 +280,19 @@ h1, h2, h3,
   height: auto;
 }
 
-.site-header {
-  padding-right: 120px;
+.brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.site-logo {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .site-logo {
+    width: 50px;
+  }
 }
