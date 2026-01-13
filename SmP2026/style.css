@@ -274,6 +274,6 @@ h1, h2, h3,
 
 .site-logo {
   margin-left: auto;      /* pushes it to the right */
-  width: 120px;           /* control size */
+  width: 40px;           /* control size */
   height: auto;
 }
