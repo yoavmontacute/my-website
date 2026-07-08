@@ -188,10 +188,10 @@ strong{ font-weight:600; }
   margin:.3rem 0 1rem 1.4rem;
   background:var(--cambridge);
   border:1px solid var(--cambridge-deep);
-  padding:4px;
+  padding:2px;
   line-height:0;
 }
-.figure img{ display:block; width:186px; height:auto; }
+.figure img{ display:block; width:155px; height:auto; }
 .about-jp{
   font-family:var(--serif);
   font-size:.86rem; color:#5A6472;
