@@ -205,7 +205,12 @@ strong{ font-weight:600; }
   padding:2px;
   line-height:0;
 }
-.figure img{ display:block; width:155px; height:auto; }
+.figure img {
+  display: block;
+  width: 155px;
+  height: auto;
+  dynamic-range-limit: standard;
+}
 .about-jp{
   font-family:var(--serif);
   font-size:.86rem; color:#5A6472;
